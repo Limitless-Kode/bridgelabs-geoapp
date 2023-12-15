@@ -14,7 +14,7 @@ const CountryDetailsSheet = ({country, expand, toggle}: CountryDetailsSheetProps
     return (
         <div
             id="country-details-sheet"
-            className={`transition-all fixed ${expand ? "bottom-0" : "bottom-[calc(-80vh+90px)] md:bottom-[calc(-50vh+90px)]"} right-5 min-w-[90vw] md:min-w-[400px] rounded-t-xl overflow-clip max-h-[80vh] md:max-h-[50vh]`}
+            className={`transition-all fixed bg-white md:bg-transparent ${expand ? "bottom-0" : "bottom-[calc(-80vh+90px)] md:bottom-[calc(-50vh+90px)]"} right-5 min-w-[90vw] md:min-w-[400px] rounded-t-xl overflow-clip max-h-[80vh] md:max-h-[50vh]`}
         >
             <div role="button" onClick={toggle} className="p-5 bg-orange-600">
                 <div
