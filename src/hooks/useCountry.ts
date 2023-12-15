@@ -9,7 +9,6 @@ const useCountry = (country?: string) => {
     const [data, setData] = useState<CountryDetails|null>(null);
 
     useEffect(() => {
-        console.log("ENV", process.env.RAPID_API_KEY);
         if (!country) {
             setLoading(false);
             return setData(null);
@@ -34,14 +33,13 @@ const useCountry = (country?: string) => {
                 const response = await axios.request(options);
                 setData(response.data[0]);
             } catch (error: any) {
-                console.log(error);
                 setError(error);
             } finally {
                 setLoading(false);
             }
         }
 
-       if(country)  getCountryDetails();
+       if(country) getCountryDetails();
     }, [country]);
 
     return { loading, error, data };

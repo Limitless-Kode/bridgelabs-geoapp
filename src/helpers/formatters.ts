@@ -1,4 +1,6 @@
 export const format_currency = (amount: number, currencyCode: string) => {
+    if(!amount) return "";
+    if (!currencyCode) return amount.toLocaleString();
     const formatter = new Intl.NumberFormat(undefined, {
         style: 'currency',
         currency: currencyCode,
