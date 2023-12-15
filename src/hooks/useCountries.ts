@@ -31,10 +31,13 @@ const useCountries = () => {
             `,
             })
             .then((result) => {
+                console.log({result})
                 setData(result.data.countries);
-
             })
-            .catch((error) => setError(error))
+            .catch((error) => {
+                console.log({error});
+                setError(error);
+            })
             .finally(() => setLoading(false));
     },[searchParam]);
 
