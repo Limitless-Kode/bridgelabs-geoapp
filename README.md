@@ -55,6 +55,25 @@ This directory contains public assets like `features.json`.
 - [TypeScript](https://www.typescriptlang.org) - Static typing for JavaScript
 - [Next.js](https://nextjs.org) - The React framework for production
 
+## Testing
+Implemented `Unit Testing` with [Jest](https://jestjs.io) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+And e2e testing with [Cypress](https://www.cypress.io).
+
+To run the tests, run:
+
+```sh
+# unit tests
+pnpm run test
+
+# e2e tests
+pnpm run cypress:open
+```
+
+
+## Features
+1. Search for a country/state by name.
+2. Select country from map.
+3. Detailed information about a country/state.
 
 ## Authors
 
