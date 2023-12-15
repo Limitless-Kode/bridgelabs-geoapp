@@ -6,7 +6,7 @@ type InteractiveMapProps = {
 }
 const InteractiveMap = ({onMapSelect, selectedCountry}: InteractiveMapProps) => {
     return (
-        <div className="w-[80vw]">
+        <div className="w-[95vw] md:w-[80vw]">
             <ComposableMap>
                 <Geographies geography="/features.json">
                     {({geographies}) =>

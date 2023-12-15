@@ -13,7 +13,7 @@ const SearchInput = ({onChange, onSearch, value}: SearchInputProps) => {
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 type="text"
-                className="rounded-l-lg outline-none px-5 text-sm h-[60px] min-w-[450px]"
+                className="rounded-l-lg outline-none px-5 text-sm h-[60px] min-w-[280px] md:min-w-[450px]"
                 placeholder="Search by country, states or continents"
             />
             <button onClick={onSearch} className="flex items-center justify-center bg-orange-600 border-none rounded-r-lg text-white text-2xl h-[60px] w-[60px]">
