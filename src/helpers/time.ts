@@ -1,4 +1,4 @@
-export const getCurrentTimeInTimezone = (timezone: string) => {
+export const getCurrentTimeInTimezone = (timezone = "UTC") => {
     try {
         const date = new Date();
         return date.toLocaleTimeString('en-US', {

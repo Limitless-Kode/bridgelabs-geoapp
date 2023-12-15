@@ -3,11 +3,12 @@ import {getCurrentTimeInTimezone} from "@/helpers/time";
 import * as ct from "countries-and-timezones";
 import {format_currency, format_number} from "@/helpers/formatters";
 import {CountryDetails} from "@/types/country.types";
+import {MouseEventHandler} from "react";
 
 type CountryDetailsSheetProps = {
     country: CountryDetails;
     expand: boolean;
-    toggle: (open: boolean) => void;
+    toggle: MouseEventHandler<HTMLDivElement>;
 }
 const CountryDetailsSheet = ({country, expand, toggle}: CountryDetailsSheetProps) => {
     return (
@@ -29,7 +30,7 @@ const CountryDetailsSheet = ({country, expand, toggle}: CountryDetailsSheetProps
                 </div>
                 <div className="flex items-center justify-between px-5">
                     <h1 className="">Time</h1>
-                    <h1 className="">{getCurrentTimeInTimezone(ct.getTimezonesForCountry(country.cca2)[0].name)}</h1>
+                    <h1 className="">{getCurrentTimeInTimezone(ct.getTimezonesForCountry(country.cca2)?.[0].name)}</h1>
                 </div>
                 <div className="flex items-center justify-between px-5">
                     <h1 className="">Population</h1>

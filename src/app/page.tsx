@@ -1,5 +1,5 @@
 "use client"
-import {useEffect, useState} from "react";
+import {SetStateAction, useEffect, useState} from "react";
 import SearchInput from "@/components/search.input";
 import useCountries from "@/hooks/useCountries";
 import {Shimmer} from "react-shimmer";
@@ -10,8 +10,8 @@ import CountryDetailsSheet from "@/components/country.details.sheet";
 
 
 export default function Home() {
-    const [search, setSearch] = useState("");
-    const [selectedCountry, setSelectedCountry] = useState<Country|null>(null);
+    const [search, setSearch] = useState<string>("");
+    const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
     const {data, loading, query} = useCountries();
     const {data: country} = useCountry(selectedCountry?.name);
     const [openCountryDetails, setOpenCountryDetails] = useState(false);
