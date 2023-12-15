@@ -51,7 +51,7 @@ export default function Home() {
                 {
                     loading && Array.from({length: 3}).map((_, index) => {
                         return (
-                            <div key={index}
+                            <div id="shimmer" key={index}
                                  className="flex items-center gap-2 rounded-full cursor-pointer min-w-[150px] overflow-clip">
                                 <Shimmer width={150} height={40}/>
                             </div>
@@ -63,13 +63,14 @@ export default function Home() {
                     !loading && data?.map((country, index) => {
                         return (
                             <div
+                                id={country.name.split(" ").join("-").toLowerCase().concat("-result")}
                                 key={index}
                                 role="button"
                                 onClick={()=> {
                                     setSelectedCountry(country);
                                     setOpenCountryDetails(true);
                                 }}
-                                className={`transition-colors flex items-center gap-2 p-2 px-3 rounded-full cursor-pointer min-w-[150px] ${country.code === selectedCountry?.code ? "bg-orange-600 text-white":"bg-orange-100"}`}>
+                                className={`result transition-colors flex items-center gap-2 p-2 px-3 rounded-full cursor-pointer min-w-[150px] ${country.code === selectedCountry?.code ? "bg-orange-600 text-white":"bg-orange-100"}`}>
                                 <div className="flex items-center justify-center text-xl h-[35px] w-[35px] rounded-full bg-white">{country.emoji}</div>
                                 <h1>{country.name}</h1>
                             </div>

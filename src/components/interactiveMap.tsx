@@ -7,11 +7,12 @@ type InteractiveMapProps = {
 const InteractiveMap = ({onMapSelect, selectedCountry}: InteractiveMapProps) => {
     return (
         <div className="w-[95vw] md:w-[80vw]">
-            <ComposableMap>
+            <ComposableMap id="map">
                 <Geographies geography="/features.json">
                     {({geographies}) =>
                         geographies.map((geo: any) => (
                             <Geography
+                                id={geo.properties.name.split(" ").join("-").toLowerCase()}
                                 className="cursor-pointer"
                                 onClick={() => onMapSelect(geo.properties.name)}
                                 key={geo.rsmKey}

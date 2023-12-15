@@ -1,52 +1,44 @@
 import {Timezone} from "countries-and-timezones";
 
 export type CountryDetails = {
-    href:         string;
     name:         Name;
     tld:          string[];
     cca2:         string;
     ccn3:         string;
     cca3:         string;
     cioc:         string;
-    fifa:         string;
     independent:  boolean;
     status:       string;
     unMember:     boolean;
-    currencies:   Currency[];
+    currencies:   Currencies;
     idd:          Idd;
-    capital:      Capital[];
+    capital:      string[];
     altSpellings: string[];
     region:       string;
     subregion:    string;
-    continents:   string[];
-    languages:    Language[];
-    latLng:       LatLng;
-    landlocked:   string;
+    languages:    Languages;
+    translations: { [key: string]: Translation };
+    latlng:       number[];
+    landlocked:   boolean;
     borders:      string[];
     area:         number;
+    demonyms:     Demonyms;
     flag:         string;
-    flags:        Flags;
-    demonyms:     Demonym[];
-    coatOfArms:   CoatOfArms;
-    population:   number;
     maps:         Maps;
+    population:   number;
     gini:         Gini;
+    fifa:         string;
     car:          Car;
     timezones:    string[];
+    continents:   string[];
+    flags:        Flags;
+    coatOfArms:   CoatOfArms;
     startOfWeek:  string;
-    postalCode:   Gini;
-    gdp:          Gdp;
-    groups:       string[];
+    capitalInfo:  CapitalInfo;
 }
 
-export type Capital = {
-    name:   string;
-    latLng: LatLng;
-}
-
-export type LatLng = {
-    lat: number;
-    lng: number;
+export type CapitalInfo = {
+    latlng: number[];
 }
 
 export type Car = {
@@ -59,16 +51,21 @@ export type CoatOfArms = {
     svg: string;
 }
 
+export type Currencies = Record<string, Currency>
+
 export type Currency = {
-    name:      string;
-    alphaCode: string;
-    symbol:    string;
+    name:   string;
+    symbol: string;
 }
 
-export type Demonym = {
-    langCode: string;
-    f:        string;
-    m:        string;
+export type Demonyms = {
+    eng: Eng;
+    fra: Eng;
+}
+
+export type Eng = {
+    f: string;
+    m: string;
 }
 
 export type Flags = {
@@ -77,13 +74,8 @@ export type Flags = {
     alt: string;
 }
 
-export type Gdp = {
-    currency: string;
-    value:    number;
-    year:     number;
-}
-
 export type Gini = {
+    "2016": number;
 }
 
 export type Idd = {
@@ -91,9 +83,8 @@ export type Idd = {
     suffixes: string[];
 }
 
-export type Language = {
-    code: string;
-    name: string;
+export type Languages = {
+    eng: string;
 }
 
 export type Maps = {
@@ -102,17 +93,20 @@ export type Maps = {
 }
 
 export type Name = {
-    common:       string;
-    official:     string;
-    nativeName:   NativeName[];
-    translations: NativeName[];
+    common:     string;
+    official:   string;
+    nativeName: NativeName;
 }
 
 export type NativeName = {
-    lang:     string;
+    eng: Translation;
+}
+
+export type Translation = {
     official: string;
     common:   string;
 }
+
 
 export type Country = {
     code: Timezone;

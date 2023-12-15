@@ -17,7 +17,7 @@ const useCountry = (country?: string) => {
         const getCountryDetails = async () => {
             const options = {
                 method: 'GET',
-                url: `https://geography4.p.rapidapi.com/apis/geography/v1/country/name/${country}`,
+                url: `https://restcountries.com/v3.1/name/${country}`,
                 params: {
                     exactMatch: 'true',
                     limit: '2',

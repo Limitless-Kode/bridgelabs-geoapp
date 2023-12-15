@@ -8,7 +8,7 @@ type SearchInputProps = {
 }
 const SearchInput = ({onChange, onSearch, value}: SearchInputProps) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center" id="search">
             <input
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
