@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import axios from 'axios';
 import useCountry from "./useCountry";
-import {act} from "react-dom/test-utils";
 
 jest.mock('axios');
 

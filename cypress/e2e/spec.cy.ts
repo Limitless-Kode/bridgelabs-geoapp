@@ -56,18 +56,4 @@ describe('App', () => {
 
     cy.get('#country-details-sheet').should('exist')
   })
-
-  // it('should include capital', () => {
-  //   const country = 'Ghana'
-  //   cy.get('#search>input').type(`${country}`)
-  //   cy.get('#search>button').click()
-  //   cy.get('#shimmer').should('exist')
-  //
-  //   cy.get('#nigeria').click()
-  //
-  //   cy.get('#country-details-sheet').should('exist')
-  // })
-
-
-
 });
